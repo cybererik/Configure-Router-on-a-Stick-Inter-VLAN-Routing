@@ -21,20 +21,29 @@ You can view the full CLI configuration for the Cisco router & switch in this [G
 
 ---
 
-
-
-![Switch sh vlan br](https://github.com/user-attachments/assets/d09d3ecc-5ec2-4397-aee9-ed02e0aca620)
-
-
----
-
+## Why Inter-VLAN Routing is Important?
+Inter-VLAN routing is essential because VLANs naturally isolate traffic, meaning devices in different VLANs can’t communicate without a Layer 3 device. Setting up inter-VLAN routing allows controlled communication between VLANs while keeping network segmentation intact for security and efficiency. This improves traffic management, reduces congestion, and helps enforce security policies by regulating how devices interact across VLANs.
 ![Router show ip int br](https://github.com/user-attachments/assets/fd022aa8-e09d-41f8-87d6-6ce2f116a52b)
 
 
 ---
 
+## Why changing the default VLAN 1 important?
+It's a best practice to move traffic off VLAN 1, renaming it to something like "MANAGE." Since VLAN 1 is the default and widely known, it's a common target for attacks. Changing it and disabling VLAN 1 reduces security risks and aligns with security through obscurity. This helps prevent unauthorized access and improves overall network security.
+
+![Switch sh vlan br](https://github.com/user-attachments/assets/d09d3ecc-5ec2-4397-aee9-ed02e0aca620)
+
+---
+
 ## ✅ Verification
-### Verification PC Screenshot:
+If PC1 can successfully ping PC3, it confirms that inter-VLAN routing is correctly configured. This means:  
+
+1. **VLANs are properly assigned** – Both PCs are in separate VLANs with correct IP addressing.  
+2. **Trunking is working** – The switch is forwarding tagged traffic between VLANs.  
+3. **Router-on-a-stick is functioning** – The router is handling VLAN traffic using subinterfaces with the correct encapsulation (dot1Q).  
+4. **Routing is enabled** – The router is forwarding packets between VLANs as expected.  
+
+This verifies that inter-VLAN communication is properly set up.
 ![Verification](https://github.com/user-attachments/assets/7d83b911-b876-4f0d-97a7-82f8c53aeeb0)
 
 
