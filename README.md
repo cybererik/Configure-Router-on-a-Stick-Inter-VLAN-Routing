@@ -23,6 +23,7 @@ You can view the full CLI configuration for the Cisco router & switch in this [G
 
 ## Why Inter-VLAN Routing is Important?
 Inter-VLAN routing is essential because VLANs naturally isolate traffic, meaning devices in different VLANs can’t communicate without a Layer 3 device. Setting up inter-VLAN routing allows controlled communication between VLANs while keeping network segmentation intact for security and efficiency. This improves traffic management, reduces congestion, and helps enforce security policies by regulating how devices interact across VLANs.
+
 ![Router show ip int br](https://github.com/user-attachments/assets/fd022aa8-e09d-41f8-87d6-6ce2f116a52b)
 
 
